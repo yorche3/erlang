@@ -13,12 +13,14 @@ erlang/
 ├── README.md              # Este archivo
 ├── LICENSE                # Licencia del proyecto
 ├── core/
-│   └── foundations/       # Proyectos de fundamentos (Core Foundations)
-│       ├── helloworld/    # 01_Hello_World
-│       ├── hellouser/     # 02_Hello_User
-│       ├── unit_test/
-│       │   └── calculator/  # 03_Unit_Test_Calculator
-│       └── numbers/       # 04_Numbers
+│   ├── foundations/       # Proyectos de fundamentos (Core Foundations)
+│   │   ├── helloworld/    # 01_Hello_World
+│   │   ├── hellouser/     # 02_Hello_User
+│   │   ├── unit_test/
+│   │   │   └── calculator/  # 03_Unit_Test_Calculator
+│   │   └── numbers/       # 04_Numbers
+│   └── algorithms/        # Algoritmos puros (Fase 1)
+│       └── naive_sort/    # 05_Naive_Sort
 ```
 
 ---
@@ -62,6 +64,7 @@ rebar3 --version
 | [02](core/foundations/hellouser/) | Hello User | — | — |
 | [03](core/foundations/unit_test/calculator/) | Calculator | 5 operaciones aritméticas | EUnit (5 tests) |
 | [04](core/foundations/numbers/) | Numbers | 5 algoritmos × 2 enfoques (rec, acc) | EUnit (10 tests) |
+| [05](core/algorithms/naive_sort/) | Naive Sort | Selection, Bubble e Insertion Sort | EUnit (21 tests) |
 
 ---
 

@@ -11,12 +11,14 @@ Este directorio agrupa los proyectos implementados en **Erlang/OTP**, organizado
 ```text
 erlang/core/
 ├── README.md              # Este archivo
-└── foundations/           # Proyectos de fundamentos
-    ├── helloworld/        # 01_Hello_World
-    ├── hellouser/         # 02_Hello_User
-    ├── unit_test/
-    │   └── calculator/    # 03_Unit_Test_Calculator
-    └── numbers/           # 04_Numbers
+├── foundations/           # Proyectos de fundamentos
+│   ├── helloworld/        # 01_Hello_World
+│   ├── hellouser/         # 02_Hello_User
+│   ├── unit_test/
+│   │   └── calculator/    # 03_Unit_Test_Calculator
+│   └── numbers/           # 04_Numbers
+└── algorithms/            # Algoritmos puros (Fase 1)
+    └── naive_sort/        # 05_Naive_Sort
 ```
 
 ---
@@ -29,6 +31,7 @@ erlang/core/
 | [02](foundations/hellouser/) | Hello User | Leer nombre y saludar personalizadamente | `erlc`, `erl` |
 | [03](foundations/unit_test/calculator/) | Calculator | 5 operaciones con pruebas unitarias | `rebar3`, EUnit |
 | [04](foundations/numbers/) | Numbers | Algoritmos matemáticos (rec y acc) | `rebar3`, EUnit |
+| [05](algorithms/naive_sort/) | Naive Sort | Selection, Bubble e Insertion Sort ($O(n^2)$) | `rebar3`, EUnit |
 
 ---
 
@@ -46,6 +49,7 @@ erlang/core/
 ## 🌐 Enlaces
 
 - [Fundamentos →](foundations/)
+- [Algoritmos puros →](algorithms/)
 - [Repositorio principal](https://github.com/yorche3/programming_languages)
 - [GitHub Pages](https://yorche3.github.io/programming_languages/)
 

@@ -1,7 +1,12 @@
+%% naive_sort — ordenamientos elementales O(n^2) sobre listas de enteros.
+%% Especificación: 05_Naive_Sort. Contrato: lista -> lista nueva ordenada; [] si está vacía.
 -module(naive_sort).
 
 -export([selection_sort/1, bubble_sort/1, insertion_sort/1]).
 
+%% selection_sort: selecciona el mínimo del resto no ordenado y lo pone al frente
+%% input: lista de enteros
+%% output: lista nueva ordenada de menor a mayor
 selection_sort([]) -> [];
 selection_sort(List) ->
     MinIdx = pick_min(List),
@@ -20,6 +25,9 @@ rest(List, Elem) ->
         [H|T] -> [H | rest(T, Elem)]
     end.
 
+%% bubble_sort: compara e intercambia adyacentes, con bandera de salida temprana
+%% input: lista de enteros
+%% output: lista nueva ordenada de menor a mayor
 bubble_sort([]) -> [];
 bubble_sort(List) ->
     case bubble_pass(List) of
@@ -35,6 +43,9 @@ bubble_pass([H | T]) ->
     {[H | Rest], Swapped};
 bubble_pass([]) -> {[], false}.
 
+%% insertion_sort: inserta cada elemento en su sub-lista ordenada
+%% input: lista de enteros
+%% output: lista nueva ordenada de menor a mayor
 insertion_sort([]) -> [];
 insertion_sort([H|T]) -> insert(H, insertion_sort(T)).
 

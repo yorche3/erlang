@@ -20,7 +20,8 @@ erlang/
 │   │   │   └── calculator/  # 03_Unit_Test_Calculator
 │   │   └── numbers/       # 04_Numbers
 │   └── algorithms/        # Algoritmos puros (Fase 1)
-│       └── naive_sort/    # 05_Naive_Sort
+│       ├── naive_sort/    # 05_Naive_Sort
+│       └── data_structures_basics/  # 06_Data_Structures_Basics
 ```
 
 ---
@@ -65,6 +66,7 @@ rebar3 --version
 | [03](core/foundations/unit_test/calculator/) | Calculator | 5 operaciones aritméticas | EUnit (5 tests) |
 | [04](core/foundations/numbers/) | Numbers | 5 algoritmos × 2 enfoques (rec, acc) | EUnit (10 tests) |
 | [05](core/algorithms/naive_sort/) | Naive Sort | Selection, Bubble e Insertion Sort | EUnit (21 tests) |
+| [06](core/algorithms/data_structures_basics/) | Data Structures Basics | `Node`, lista enlazada, pila y cola sobre celdas enlazadas inmutables | EUnit (23 tests) |
 
 ---
 

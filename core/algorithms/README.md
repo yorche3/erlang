@@ -10,14 +10,22 @@ Este directorio agrupa las implementaciones de **Erlang/OTP** de la Fase 1 — A
 
 ```text
 erlang/core/algorithms/
-├── README.md              # Este archivo
-└── naive_sort/            # 05_Naive_Sort
+├── README.md                         # Este archivo
+├── naive_sort/                       # 05_Naive_Sort
+│   ├── rebar.config
+│   ├── src/
+│   │   ├── naive_sort.erl
+│   │   └── naive_sort.app.src
+│   ├── test/
+│   │   └── naive_sort_test.erl
+│   └── README.md
+└── data_structures_basics/           # 06_Data_Structures_Basics
     ├── rebar.config
     ├── src/
-    │   ├── naive_sort.erl
-    │   └── naive_sort.app.src
+    │   ├── data_structures_basics.erl
+    │   └── data_structures_basics.app.src
     ├── test/
-    │   └── naive_sort_test.erl
+    │   └── data_structures_basics_test.erl
     └── README.md
 ```
 
@@ -28,6 +36,7 @@ erlang/core/algorithms/
 | # | Proyecto | Descripción | Herramientas | Tests |
 |---|----------|-------------|--------------|:-----:|
 | [05](naive_sort/) | Naive Sort | Selection, Bubble e Insertion Sort ($O(n^2)$) | `rebar3`, EUnit | 21 |
+| [06](data_structures_basics/) | Data Structures Basics | `Node`, lista enlazada, pila y cola sobre celdas enlazadas inmutables | `rebar3`, EUnit | 23 |
 
 ---
 
@@ -51,14 +60,19 @@ erlang/core/algorithms/
 | **Generadores** | Funciones `*_test_()` que devuelven listas de tests con nombre |
 | **Recursión** | Sustituye a los bucles; la BEAM garantiza TCO |
 | **Inmutabilidad** | Ninguna función muta la lista recibida: devuelven una lista nueva |
-| **Indicador de fallo** | No aplica: `list()` no admite entradas nulas |
+| **Indicador de fallo** | En `naive_sort` no aplica: `list()` no admite entradas nulas. En `data_structures_basics` es `-1` en las operaciones que devuelven un entero y el átomo `empty` en la tupla cuando no hay estructura que devolver |
 
 ---
 
 ## 🚀 Compilación rápida
 
 ```bash
+# Naive Sort Tests
 cd naive_sort
+rebar3 compile && rebar3 eunit
+
+# Data Structures Basics Tests
+cd ../data_structures_basics
 rebar3 compile && rebar3 eunit
 ```
 

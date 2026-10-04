@@ -133,7 +133,7 @@ run_linked_list_case(Subject) ->
         "insert at both ends", ExpectedInsertedValues, InsertedList),
 
     DeleteExistingInput = 10,
-    {ok, ListAfterDelete} =
+    {true, ListAfterDelete} =
         data_structures_basics:linked_list_delete(InsertedList, DeleteExistingInput),
     assert_for(Subject, linked_list_delete, "delete first occurrence",
         3, data_structures_basics:linked_list_size(ListAfterDelete)),
@@ -141,20 +141,20 @@ run_linked_list_case(Subject) ->
         "delete first occurrence", [5, 20, 10], ListAfterDelete),
 
     AbsentValueInput = 99,
-    AbsentDeleteOutput = {error, not_found},
+    AbsentDeleteOutput = {false, ListAfterDelete},
     AbsentDeleteResult =
         data_structures_basics:linked_list_delete(ListAfterDelete, AbsentValueInput),
     assert_for(Subject, linked_list_delete, "absent value",
         AbsentDeleteOutput, AbsentDeleteResult),
-    {error, not_found} = AbsentDeleteResult,
+    {false, ListAfterDelete} = AbsentDeleteResult,
     assert_values_for_any(Subject, [linked_list_delete, linked_list_size],
         "absent value", [5, 20, 10], ListAfterDelete),
 
-    {ok, AfterHeadDelete} =
+    {true, AfterHeadDelete} =
         data_structures_basics:linked_list_delete(ListAfterDelete, HeadInput),
-    {ok, AfterMiddleDelete} =
+    {true, AfterMiddleDelete} =
         data_structures_basics:linked_list_delete(AfterHeadDelete, TailSecondInput),
-    {ok, EmptiedList} =
+    {true, EmptiedList} =
         data_structures_basics:linked_list_delete(AfterMiddleDelete, TailDuplicateInput),
     assert_for_any(Subject, [linked_list_delete, linked_list_is_empty],
         "empty the list", true, data_structures_basics:linked_list_is_empty(EmptiedList)),
@@ -169,7 +169,7 @@ run_stack_case(Subject) ->
     EmptySizeOutput = 0,
     EmptyValueOutput = -1,
     EmptyStack = data_structures_basics:stack_init(),
-    EmptyPopOutput = {-1, EmptyStack},
+    EmptyPopOutput = {-1, empty},
     assert_for_any(Subject, [stack_init, stack_is_empty],
         "empty state and failed removal", true,
         data_structures_basics:stack_is_empty(EmptyStack)),
@@ -221,7 +221,7 @@ run_queue_case(Subject) ->
     EmptySizeOutput = 0,
     EmptyValueOutput = -1,
     EmptyQueue = data_structures_basics:queue_init(),
-    EmptyDequeueOutput = {-1, EmptyQueue},
+    EmptyDequeueOutput = {-1, empty},
     assert_for_any(Subject, [queue_init, queue_is_empty],
         "empty state and failed removal", true,
         data_structures_basics:queue_is_empty(EmptyQueue)),
@@ -282,7 +282,7 @@ assert_list_values(Subject, Case, [], List) ->
 assert_list_values(Subject, Case, [ExpectedValue | RemainingValues], List) ->
     assert_for(Subject, Subject, Case, ExpectedValue,
         data_structures_basics:linked_list_get_head(List)),
-    {ok, RemainingList} =
+    {true, RemainingList} =
         data_structures_basics:linked_list_delete(List, ExpectedValue),
     assert_list_values(Subject, Case, RemainingValues, RemainingList).
 

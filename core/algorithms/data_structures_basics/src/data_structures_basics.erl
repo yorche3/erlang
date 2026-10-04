@@ -95,12 +95,12 @@ node_set_next(#cell{} = Cell, Next) ->
 linked_list_init() ->
     #linked_list{head = undefined, tail = undefined, count = 0}.
 
-%% Esqueletos del paso 4b: cada operacion devuelve el indicador natural
-%% (`undefined`, `false`, `0`, `{error, ...}`) o la misma estructura, sin
-%% resolver ningun caso.
--spec linked_list_get_head(linked_list()) -> integer() | undefined.
+%% Esqueletos del paso 4b: cada operacion devuelve el indicador natural o la
+%% misma estructura, sin resolver ningun caso. Las que devuelven un entero usan
+%% `-1` como valor de fallo; la celda y la ausencia de enlace usan `undefined`.
+-spec linked_list_get_head(linked_list()) -> integer().
 linked_list_get_head(_LinkedList) ->
-    undefined.
+    -1.
 
 -spec linked_list_insert_head(linked_list(), integer()) -> linked_list().
 linked_list_insert_head(LinkedList, _Value) ->
@@ -135,13 +135,13 @@ stack_init() ->
 stack_push(Stack, _Value) ->
     Stack.
 
--spec stack_pop(stack()) -> {ok, integer(), stack()} | {error, empty}.
+-spec stack_pop(stack()) -> {integer(), stack()}.
 stack_pop(_Stack) ->
-    {error, empty}.
+    {-1, stack_init()}.
 
--spec stack_peek(stack()) -> integer() | undefined.
+-spec stack_peek(stack()) -> integer().
 stack_peek(_Stack) ->
-    undefined.
+    -1.
 
 -spec stack_is_empty(stack()) -> boolean().
 stack_is_empty(_Stack) ->
@@ -163,13 +163,13 @@ queue_init() ->
 queue_enqueue(Queue, _Value) ->
     Queue.
 
--spec queue_dequeue(queue()) -> {ok, integer(), queue()} | {error, empty}.
+-spec queue_dequeue(queue()) -> {integer(), queue()}.
 queue_dequeue(_Queue) ->
-    {error, empty}.
+    {-1, queue_init()}.
 
--spec queue_peek(queue()) -> integer() | undefined.
+-spec queue_peek(queue()) -> integer().
 queue_peek(_Queue) ->
-    undefined.
+    -1.
 
 -spec queue_is_empty(queue()) -> boolean().
 queue_is_empty(_Queue) ->

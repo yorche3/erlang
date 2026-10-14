@@ -6,8 +6,7 @@ Implementación de la especificación [01_Hello_World](https://yorche3.github.io
 
 ---
 
-## 📂 Archivos
-
+## 📂 Archivos y estructura / Files & Structure
 | Archivo | Propósito |
 |---------|-----------|
 | [`hello_world.erl`](hello_world.erl) | Código fuente: módulo `hello_world` con función `main/0` |
@@ -24,14 +23,13 @@ helloworld/
 
 ---
 
-## 💻 Código
-
+## �️ Enfoque y construcción / Approach & Build
 ```erlang
 -module(hello_world).
 -export([main/0]).
 
 main() ->
-  io:fwrite("Hello world! from Erlang\n").
+  io:fwrite("Hello, World! from Erlang!\n").
 ```
 
 | Elemento | Descripción |
@@ -44,8 +42,7 @@ main() ->
 
 ---
 
-## 🚀 Compilación y ejecución
-
+## 🚀 Compilación y ejecución / Build & Run
 ### Requisito: Tener Erlang/OTP instalado
 
 ```bash

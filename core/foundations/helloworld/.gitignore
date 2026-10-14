@@ -1,0 +1,3 @@
+# Salidas de la compilación / Compilation output
+*.beam
+erl_crash.dump

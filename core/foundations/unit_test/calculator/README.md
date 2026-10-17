@@ -8,7 +8,7 @@ Implementa las 5 operaciones aritméticas (`addition`, `subtraction`, `multiplic
 
 ---
 
-## 📂 Archivos
+## 📂 Archivos y estructura / Files & Structure
 
 | Archivo / Directorio | Propósito |
 |----------------------|-----------|
@@ -89,7 +89,7 @@ modulus_test() ->
 
 ---
 
-## 🛠️ Enfoque e implementación
+## 🛠️ Enfoque y construcción / Approach & Build
 
 ### Cláusulas múltiples con guardas
 

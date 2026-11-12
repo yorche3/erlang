@@ -19,7 +19,8 @@ erlang/core/
 │   └── numbers/           # 04_Numbers
 └── algorithms/            # Algoritmos puros (Fase 1)
     ├── naive_sort/        # 05_Naive_Sort
-    └── data_structures_basics/  # 06_Data_Structures_Basics
+    ├── data_structures_basics/    # 06_Data_Structures_Basics
+    └── data_structures_advanced/  # 07_Data_Structures_Advanced
 ```
 
 ---
@@ -34,6 +35,7 @@ erlang/core/
 | [04](foundations/numbers/) | Numbers | Algoritmos matemáticos (rec y acc) | `rebar3`, EUnit |
 | [05](algorithms/naive_sort/) | Naive Sort | Selection, Bubble e Insertion Sort ($O(n^2)$) | `rebar3`, EUnit |
 | [06](algorithms/data_structures_basics/) | Data Structures Basics | `Node`, lista enlazada, pila y cola sobre celdas enlazadas inmutables | `rebar3`, EUnit |
+| [07](algorithms/data_structures_advanced/) | Data Structures Advanced | `tree_node`, árbol binario de búsqueda (BST) y grafo dirigido con registro enlazado canónico | `rebar3`, EUnit |
 
 ---
 

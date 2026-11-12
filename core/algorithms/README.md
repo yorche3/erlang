@@ -19,13 +19,21 @@ erlang/core/algorithms/
 │   ├── test/
 │   │   └── naive_sort_test.erl
 │   └── README.md
-└── data_structures_basics/           # 06_Data_Structures_Basics
+├── data_structures_basics/           # 06_Data_Structures_Basics
+│   ├── rebar.config
+│   ├── src/
+│   │   ├── data_structures_basics.erl
+│   │   └── data_structures_basics.app.src
+│   ├── test/
+│   │   └── data_structures_basics_test.erl
+│   └── README.md
+└── data_structures_advanced/         # 07_Data_Structures_Advanced
     ├── rebar.config
     ├── src/
-    │   ├── data_structures_basics.erl
-    │   └── data_structures_basics.app.src
+    │   ├── data_structures_advanced.erl
+    │   └── data_structures_advanced.app.src
     ├── test/
-    │   └── data_structures_basics_test.erl
+    │   └── data_structures_advanced_test.erl
     └── README.md
 ```
 
@@ -37,6 +45,7 @@ erlang/core/algorithms/
 |---|----------|-------------|--------------|:-----:|
 | [05](naive_sort/) | Naive Sort | Selection, Bubble e Insertion Sort ($O(n^2)$) | `rebar3`, EUnit | 21 |
 | [06](data_structures_basics/) | Data Structures Basics | `Node`, lista enlazada, pila y cola sobre celdas enlazadas inmutables | `rebar3`, EUnit | 23 |
+| [07](data_structures_advanced/) | Data Structures Advanced | `tree_node`, árbol binario de búsqueda (BST) y grafo dirigido con registro enlazado canónico | `rebar3`, EUnit | 24 |
 
 ---
 
@@ -73,6 +82,10 @@ rebar3 compile && rebar3 eunit
 
 # Data Structures Basics Tests
 cd ../data_structures_basics
+rebar3 compile && rebar3 eunit
+
+# Data Structures Advanced Tests
+cd ../data_structures_advanced
 rebar3 compile && rebar3 eunit
 ```
 

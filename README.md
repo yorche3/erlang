@@ -21,7 +21,8 @@ erlang/
 │   │   └── numbers/       # 04_Numbers
 │   └── algorithms/        # Algoritmos puros (Fase 1)
 │       ├── naive_sort/    # 05_Naive_Sort
-│       └── data_structures_basics/  # 06_Data_Structures_Basics
+│       ├── data_structures_basics/    # 06_Data_Structures_Basics
+│       └── data_structures_advanced/  # 07_Data_Structures_Advanced
 ```
 
 ---
@@ -67,6 +68,7 @@ rebar3 --version
 | [04](core/foundations/numbers/) | Numbers | 5 algoritmos × 2 enfoques (rec, acc) | EUnit (10 tests) |
 | [05](core/algorithms/naive_sort/) | Naive Sort | Selection, Bubble e Insertion Sort | EUnit (21 tests) |
 | [06](core/algorithms/data_structures_basics/) | Data Structures Basics | `Node`, lista enlazada, pila y cola sobre celdas enlazadas inmutables | EUnit (23 tests) |
+| [07](core/algorithms/data_structures_advanced/) | Data Structures Advanced | `tree_node`, BST (`binary_tree`) y grafo (`graph`) con registro canónico enlazado | EUnit (24 tests) |
 
 ---
 

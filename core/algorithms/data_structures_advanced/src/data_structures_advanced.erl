@@ -164,7 +164,7 @@ graph_add_edge(Graph, Source, Target) ->
     case {find_vertex(Graph#graph.vertices, Source),
           find_vertex(Graph#graph.vertices, Target)} of
         {#graph_node{neighbors = Neighbors} = Node, #graph_node{}} ->
-            case lists:member(Target, Neighbors) of
+            case has_neighbor(Target, Neighbors) of
                 true ->
                     Graph; % Edge already exists
                 false ->
@@ -184,10 +184,19 @@ graph_add_edge(Graph, Source, Target) ->
 graph_has_edge(Graph, Source, Target) ->
     case find_vertex(Graph#graph.vertices, Source) of
         #graph_node{neighbors = Neighbors} ->
-            lists:member(Target, Neighbors);
+            has_neighbor(Target, Neighbors);
         _ ->
             false
     end.
+
+%% Manual lookup: the adjacency is walked element by element.
+-spec has_neighbor(integer(), [integer()]) -> boolean().
+has_neighbor(_Value, []) ->
+    false;
+has_neighbor(Value, [Value | _]) ->
+    true;
+has_neighbor(Value, [_ | Rest]) ->
+    has_neighbor(Value, Rest).
 
 insert_sorted(Value, []) ->
     [Value];
